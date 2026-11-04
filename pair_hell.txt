@@ -1,0 +1,2 @@
+# Pair hell: pairs that will never be chosen, one per line as: Name, Name
+Lincoln, Tiffany
