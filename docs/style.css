@@ -1,0 +1,94 @@
+:root {
+  --fg: #1d1d1f;
+  --muted: #6b6b70;
+  --bg: #ffffff;
+  --accent: #2b59c3;
+  --border: #d4d4d8;
+  --ok: #e7f5ec;
+  --warn: #fff6df;
+  --error: #fdeaea;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #ececf0;
+    --muted: #a0a0a8;
+    --bg: #17171a;
+    --accent: #8fb0ff;
+    --border: #3a3a40;
+    --ok: #17321f;
+    --warn: #3a3015;
+    --error: #3d1b1b;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+main { max-width: 42rem; margin: 0 auto; padding: 1rem; }
+h1 { font-size: 1.6rem; margin: 0.5rem 0 1rem; }
+h2 { font-size: 1.15rem; margin: 1.5rem 0 0.25rem; }
+a { color: var(--accent); }
+.muted { color: var(--muted); font-size: 0.9rem; }
+
+.field { margin: 0.75rem 0; }
+.field label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+input[type="text"], textarea, select {
+  width: 100%;
+  padding: 0.6rem;
+  font: inherit;
+  color: inherit;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.check { display: flex; gap: 0.6rem; align-items: flex-start; margin: 0.4rem 0; }
+.check input { width: 1.2rem; height: 1.2rem; margin-top: 0.2rem; flex: none; }
+
+button, .button {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  font: inherit;
+  color: inherit;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+button.primary, a.button {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  button.primary, a.button { color: #101018; }
+}
+button.link {
+  padding: 0.2rem 0.3rem;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.notice { padding: 0.6rem 0.8rem; border-radius: 6px; margin: 0.75rem 0; }
+.notice.ok { background: var(--ok); }
+.notice.warn { background: var(--warn); }
+.notice.error { background: var(--error); }
+
+.grid-wrap { overflow-x: auto; }
+table.grid { border-collapse: collapse; margin: 0.5rem 0; }
+table.grid th, table.grid td { padding: 0.15rem 0.3rem; text-align: center; }
+table.grid th[scope="row"] { text-align: right; white-space: nowrap; }
+table.grid td input { width: 1.4rem; height: 1.4rem; }
+
+details { margin-top: 1rem; }
+textarea[readonly] { font: 0.85rem/1.4 ui-monospace, Consolas, monospace; }
